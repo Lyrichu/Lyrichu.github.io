@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
-  <title>Tag: DCGAN,论文解读 | Lyrichu&#39;s Blog</title>
+  <title>github+hexo搭建博客 | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="To be the best yourself!">
-<meta name="keywords" content="coding,math,machine learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lyrichu&#39;s Blog">
-<meta property="og:url" content="http://Lyrichu.github.io/tags/DCGAN-论文解读/index.html">
+  <meta name="description" content="引言 ###&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前用阿里云弹性web托管采用wordpress搭建的个人博客，经过我使用一段时间之后发现存在很多问题:  网站的响应速度非常慢，估计打开主页需要3-4s的时间，我经过搜索发现很多人都有这样的问题，所以应该不是wordpress的锅，而是阿里云弹性web托管的问题，毕竟我买的时候一年只要几百块，而且还是最便宜的经济版(内存128M+2G网">
+<meta name="keywords" content="hexo,github,搭建博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github+hexo搭建博客">
+<meta property="og:url" content="http://Lyrichu.github.io/2018/05/28/github+hexo搭建博客/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="To be the best yourself!">
+<meta property="og:description" content="引言 ###&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前用阿里云弹性web托管采用wordpress搭建的个人博客，经过我使用一段时间之后发现存在很多问题:  网站的响应速度非常慢，估计打开主页需要3-4s的时间，我经过搜索发现很多人都有这样的问题，所以应该不是wordpress的锅，而是阿里云弹性web托管的问题，毕竟我买的时候一年只要几百块，而且还是最便宜的经济版(内存128M+2G网">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-28T04:23:02.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lyrichu&#39;s Blog">
-<meta name="twitter:description" content="To be the best yourself!">
+<meta name="twitter:title" content="github+hexo搭建博客">
+<meta name="twitter:description" content="引言 ###&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;之前用阿里云弹性web托管采用wordpress搭建的个人博客，经过我使用一段时间之后发现存在很多问题:  网站的响应速度非常慢，估计打开主页需要3-4s的时间，我经过搜索发现很多人都有这样的问题，所以应该不是wordpress的锅，而是阿里云弹性web托管的问题，毕竟我买的时候一年只要几百块，而且还是最便宜的经济版(内存128M+2G网">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
   
@@ -152,60 +153,246 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-github+hexo搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/27/DCGAN-论文简单解读/" class="archive-article-date">
-  	<time datetime="2018-05-27T09:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/27/DCGAN-论文简单解读/">DCGAN 论文简单解读</a>
+    <h1 class="article-title" itemprop="name">
+      github+hexo搭建博客
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/28/github+hexo搭建博客/" class="archive-article-date">
+  	<time datetime="2018-05-28T03:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><center><h1>引言</h1></center></p>
+<p>###&nbsp;&nbsp;&nbsp;&nbsp;之前用阿里云弹性web托管采用wordpress搭建的个人博客，经过我使用一段时间之后发现存在很多问题:</p>
+<ul>
+<li>网站的响应速度非常慢，估计打开主页需要3-4s的时间，我经过搜索发现很多人都有这样的问题，所以应该不是wordpress的锅，而是阿里云弹性web托管的问题，毕竟我买的时候一年只要几百块，而且还是最便宜的经济版(内存128M+2G网页空间+4G流量+1G数据库)。其实我后来才知道弹性web托管是一个啥玩意<br>，和虚拟机差不多，性能非常有限。可惜我当时不知道啊，否则应该买云虚拟主机独享版的，虽然贵一点，但是应该会流畅很多。</li>
+<li>我最开始买的是经济版，因为访问速度慢的原因，我昨天打算把它升级成高级版(256M内存+4G网页空间+2G数据库)。我花了不到20块钱买了试用升级两个月。但是最坑爹的事情发生了，我在升级了之后，原来<br>的网站打开速度并没有提升多少(至少我没感觉到)，而且出现了一系列的问题，最后我连后台都进不去了，<br>一直提示我500内部错误。我搜索了半天也没找到解决办法。而且我用filezilla也一直连不上ftp(我确认账号和密码都是对的，升级之前一直可以登录)，这样我根本没法检查wordpress到底哪里出现问题<br>了。于是我陷入了只能浏览我的博客，但是却无法登录后台的尴尬境地。</li>
+<li>尝试了半天我也没有解决这个问题。最后想了一下，反正我的web弹性托管再过一个多月也就到期了，算<br>了，干脆不续费了。重新找个其他的办法搭博客吧。这里额外说一句，之前一直是在博客园写博客的，其实<br>还是很不错的，我一直是用的markdown写的，感觉博客园的markdown解析速度挺快，而且网页打开也很快。虽然如此，但是我还是想搭一个自己的博客(毕竟可以自己的地盘自己做主嘛)。想到了之前好像看过<br>可以用github免费搭建静态网页的博客。于是我就查资料开工了。事实证明，用github搭建博客稍微有点麻烦，但是对于一般的程序员应该花几个小时就搞好了,我自己大概花了不到三个小时吧。</li>
+</ul>
+<p></p><h2>1. 搭建过程</h2><p></p>
+<p>####&nbsp;&nbsp;&nbsp;&nbsp;因为网上已经有很多介绍怎么用github搭建博客的教程了，其中不乏一些非常详细优秀的教程，所以这里我就不从头详细描述一遍了。只是简单走下流程，贴一些有用的资料和遇到的坑。(注:我的本机系统是Ubuntu 16.04,好像windows系统搭建过程略有差别，如果你是windows系统，请搜索其他安装教程)。</p>
+<p>###&nbsp;&nbsp;&nbsp;&nbsp;1.1 我参考的资料。</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/f2285d63b3a8" target="_blank" rel="noopener">在github上搭建hexo个人博客（Linux-Ubuntu）</a></li>
+<li><a href="https://cczeng.github.io/2017/05/03/git/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Github-Pages%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E7%BB%86%E6%95%B0%E4%B8%80%E8%B7%AF%E7%9A%84%E5%9D%91/" target="_blank" rel="noopener">我是如何利用Github Pages搭建起我的博客，细数一路的坑</a></li>
+<li><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">hexo推荐主题yilia</a><br>####&nbsp;&nbsp;&nbsp;&nbsp;推荐按照<a href="https://cczeng.github.io/2017/05/03/git/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Github-Pages%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E7%BB%86%E6%95%B0%E4%B8%80%E8%B7%AF%E7%9A%84%E5%9D%91/" target="_blank" rel="noopener">我是如何利用Github Pages搭建起我的博客，细数一路的坑</a>这篇教程进行安装，因为作者写的比较详细，如果遇到一些问题，可以自行搜索解决或者参考其他教程。<br>###&nbsp;&nbsp;&nbsp;&nbsp;1.2 我遇到的一些坑。</li>
+<li>前面安装nvm,node.js应该没有太多的问题。我遇到的主要问题集中在将本地的hexo产生的文件同步到github以及后面hexo yilia主题配置的问题。hexo主要有<code>hexo init</code>,<code>hexo g</code>,<code>hexo s</code>,<code>hexo d</code>,<code>hexo clean</code>,<code>hexo new</code>等命令，分别表示<code>初始化</code>,<code>生成静态文件</code>,<code>开启本地服务器，在浏览器预览</code>,<code>将本地文件同步到关联的github repo</code>,<code>清空缓存</code>,<code>产生新文章</code>。注意在配置好hexo以及关联好github repo之后，最好每次执行<code>hexo g</code>,<code>hexo d</code>之前先执行一下<code>hexo clean</code>清空一下缓存，否则可能你输入博客的网址无法查看到你修改之后的页面。比如我当时弄了半天都没法正常查看我的博客主页，一直提示404,找不到github pages。不过我后来关闭了一下浏览器，执行了一下<code>hexo clean</code>就可以正常查看了。所以你如果遇到问题，不妨关闭浏览器重新打开，或者多刷新几次，说不定就好了。</li>
+<li>yilia的配置。这个其实可以查看yilia的官方github,讲的比较详细。其实最主要就是装好了yilia之后，修改hexo的全局<code>_config.yml</code>配置文件以及<code>themes/yilia/_config.yml</code>文件。至于配置参数怎么写，yilia的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">官方配置文件</a>都给你写好了，照葫芦画瓢改成你自己的就可以了。但是特别需要注意的是!!!:这里有两个<code>_config.yml</code>文件，一个是hexo全局的，还有一个是yilia的，一定要区分清楚!在全局配置文件里，你只需要加上下面的配置条件:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">  meta: false </span><br><span class="line">  pages: false </span><br><span class="line">  posts:</span><br><span class="line">    title: true </span><br><span class="line">    date: true</span><br><span class="line">    path: true </span><br><span class="line">    text: false </span><br><span class="line">    raw: false </span><br><span class="line">    content: false </span><br><span class="line">    slug: false </span><br><span class="line">    updated: false </span><br><span class="line">    comments: false </span><br><span class="line">    link: false </span><br><span class="line">    permalink: false </span><br><span class="line">    excerpt: false </span><br><span class="line">    categories: false </span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>而在yilia的配置文件里，你才需要按照yilia官方文档那样修改yilia主题的配置参数。想我当时就是不小心把yilia的配置命令写到全局<code>_config.yml</code>文件里了，搞了半天主题一直都不变，最后才发现写错文件了，真的是。。。。另外还有一个问题是如果你使用<code>hexo s</code>在本地浏览器预览，可能会发现图像url没法正常解析(图像无法显示)以及图标中文乱码的情况(我自己碰到了)，所以如果你也碰到了一样的问题，直接去打开你的博客主页浏览应该就好了。(原因不详)</p>
+<ul>
+<li>最后知乎上还有一篇文章<a href="https://zhuanlan.zhihu.com/p/22183337" target="_blank" rel="noopener">手把手教你建github技术博客by hexo</a>写的还是不错的，有些详细的yilia配置细节可以参考下,比如yilia博文添加多个tags是<code>[tag1,tag2]</code>这样的形式而不是<code>tag1,tag2</code>等等。<br><h2>2. 成果展示</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;我的github博客主页是<a href="https://lyrichu.github.io/">Lyrichu’s Blog</a>,原来的wordpress搭建的<a href="http://www.movieb2b.com" target="_blank" rel="noopener">博客</a>后面估计不会维护了。以后主要在<a href="https://www.cnblogs.com/lyrichu" target="_blank" rel="noopener">博客园</a>和github博客写文章了。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持，我会努力创作更好的文章!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">DCGAN,论文解读</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">搭建博客</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Lyrichu.github.io/2018/05/28/github+hexo搭建博客/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/05/28/github+hexo搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/05/27/DCGAN代码简单解读/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DCGAN代码简单解读</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="github+hexo搭建博客" data-title="github+hexo搭建博客" data-url="http://Lyrichu.github.io/2018/05/28/github+hexo搭建博客/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://Lyrichu.github.io/2018/05/28/github+hexo搭建博客/", 
+    sourceId: "github+hexo搭建博客",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="github+hexo搭建博客" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -228,9 +415,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -319,11 +506,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">haskell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DCGAN,论文解读</a>
+                <a href="javascript:void(0)" class="js-tag color1">DCGAN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码解读</a>
               </li>
             
             <div class="clearfix"></div>
