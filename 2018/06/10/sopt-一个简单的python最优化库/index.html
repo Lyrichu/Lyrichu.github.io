@@ -17,7 +17,8 @@
 <meta property="og:description" content="引言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近有些朋友总来问我有关遗传算法的东西，我是在大学搞数学建模的时候接触过一些最优化和进化算法方面的东西，以前也写过几篇博客记录过,比如遗传算法的C语言实现(一):以非线性函数求极值为例和C语言实现粒子群算法(PSO)一等，如果对原理有兴趣的话可以去我的博客具体查看:Lyrichu’s Blog。所以突发奇想，干脆把以前写的一些进化算法比如遗传算法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://t1.aixinxi.net/o_1cfk6qi2e1vok1vpvpf7jir1fvra.png-w.jpg">
-<meta property="og:updated_time" content="2018-06-10T08:06:15.627Z">
+<meta property="og:image" content="http://t1.aixinxi.net/o_1cfke3r4d1moe11q1sbo12b41ncua.png-w.jpg">
+<meta property="og:updated_time" content="2018-06-10T09:05:54.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sopt:一个简单的python最优化库">
 <meta name="twitter:description" content="引言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近有些朋友总来问我有关遗传算法的东西，我是在大学搞数学建模的时候接触过一些最优化和进化算法方面的东西，以前也写过几篇博客记录过,比如遗传算法的C语言实现(一):以非线性函数求极值为例和C语言实现粒子群算法(PSO)一等，如果对原理有兴趣的话可以去我的博客具体查看:Lyrichu’s Blog。所以突发奇想，干脆把以前写的一些进化算法比如遗传算法">
@@ -207,13 +208,24 @@
 </li>
 </ul>
 <p>上面代码的运行结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">GA costs 6.8320 seconds!</span><br><span class="line">-------------------- GA config is: --------------------</span><br><span class="line">func:&lt;function quadratic11 at 0x7f998927bd08&gt;</span><br><span class="line">code_type:binary</span><br><span class="line">complex_constraints:None</span><br><span class="line">global_generations_step:200</span><br><span class="line">cross_method:uniform</span><br><span class="line">mutation_method:uniform</span><br><span class="line">cross_rate:0.8</span><br><span class="line">lower_bound:[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]</span><br><span class="line">tournament_num:2</span><br><span class="line">variables_num:11</span><br><span class="line">complex_constraints_method:penalty</span><br><span class="line">none_uniform_mutation_rate:1</span><br><span class="line">population_size:100</span><br><span class="line">mutation_rate:0.05</span><br><span class="line">generations:200</span><br><span class="line">arithmetic_cross_alpha:0.1</span><br><span class="line">func_type:min</span><br><span class="line">mutation_rate_exp:1</span><br><span class="line">cross_rate_exp:1</span><br><span class="line">arithmetic_cross_exp:1</span><br><span class="line">M:100000000.0</span><br><span class="line">select_method:proportion</span><br><span class="line">upper_bound:[11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11]</span><br><span class="line">cross_code:False</span><br><span class="line">binary_code_length:20</span><br><span class="line">complex_constraints_C:1000000.0</span><br><span class="line">-------------------- GA caculation result is: --------------------</span><br><span class="line">global best target generation index/total generations:149/200</span><br><span class="line">global best point:[ 1.07431037  2.41401426  2.4807906   4.36291634  4.90653029  6.13753427</span><br><span class="line">  6.58147963  7.7370479   9.42957347 10.46616122 10.87151134]</span><br><span class="line">global best target:2.2685208668743204</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>sopt.util.functions</code>预定义了一些测试函数,<code>quadratic11</code>是一个11元变量的二次函数，函数原型为:$quadratic11(x_1,…,x_11)=(x_1-1)^2 +(x_2-2)^2 + … +(x_11-11)^2 + 1$,其中$1 \le x_1,…,x_11 \le 11$,函数的最小值点在(1,2,…,11)处取得，最小值为1。另外还定义了其他几个<br>测试函数为:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;其中<code>sopt.util.functions</code>预定义了一些测试函数,<code>quadratic11</code>是一个11元变量的二次函数，函数原型为:$quadratic11(x_1,…,x_{11})=(x_1-1)^2 +(x_2-2)^2 + … +(x_{11}-11)^2 + 1$,其中$1 \le x_1,…,x_{11} \le 11$,函数的最小值点在(1,2,…,11)处取得，最小值为1。另外还定义了其他几个测试函数为:</p>
 <ul>
 <li>quadratic50:和quadratic11类似,只是变量个数变为50,取值范围变为1-50;</li>
 <li>quadratic100:和quadratic11类似,只是变量个数变为100,取值范围变为1-100;</li>
 <li>quadratic500:和quadratic11类似,只是变量个数变为500,取值范围变为1-500;</li>
 <li>quadratic1000:和quadratic1000类似,只是变量个数变为1000,取值范围变为1-1000;</li>
 <li>Rosenbrock:函数原型为:$Rosenbrock(x_1,x_2)=100(x_1^2-x_2)^2+(1-x_1)^2$,其中$-2.048 \le x_1,x_2 \le 2.048$,这个函数有很多局部极小值点，函数在(-2.048,-2.048)处取得最大值;</li>
+<li>shubert2函数:函数定义为,$shubert2(x_1,x_2)=\prod_{i=1}^{2}(\sum_{j=1}^{5}(jcos((j+1)*x_i+j))$,其中$-10 \le x_1,x_2 \le 10$,函数有760个局部极小值点,全局极小值为-186.731,这里为了将适应度函数变换为正，我们在原函数的基础上加上1000,这样函数的全局极小值点就变为813.269;</li>
+<li>shubert函数，将shubert2函数中的两个变量拓展为n个变量($\prod_{i=1}^{n}$)就可以得到一般的shubert函数了。<br>&nbsp;&nbsp;&nbsp;&nbsp;对于每一个优化方法，我们都预定了一个形如<code>xx_config</code>的模块，其中定义了该优化方法的一些常用默认参数，比如<code>ga_config</code>中就定义了一些GA的一些常用优化参数，<code>ga_config.basic_config</code>定义了一些基础参数设置，比如<code>basic_config.generations</code>是一个默认进化代数,<code>basic_config.mutation_rate</code>是默认的变异参数；而<code>ga_config.cross_method</code>则预定义了所有支持的交叉方法,比如<code>cross_method.uniform</code>表示均匀交叉,<code>cross_method.one_point</code>表示单点交叉等;<code>ga_config.mutation_method</code>等也是类似的。有了这些预定义变量，可以免去我们手动输入很多参数取值以及传入方法字符串的麻烦(有时候可能会写错)。<br>&nbsp;&nbsp;&nbsp;&nbsp;观察上面的运行结果，我们发现对于quadratic11函数，最终找到的全局极小值为2.2685208668743204,和真实的全局极小值点1已经比较接近了；运行耗时6秒多，似乎有些长，这是因为我们种群数目设为100，进化代数设为200,比较大，而且又是采用二进制20位编码，再加上python脚本语言的运行效率问题，所以稍慢。为了做一个对比,这里我们将目标函数从quadratic11变为Rosenbrock函数，其他参数设置保持不变，得到的结果如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">GA costs 1.7245 seconds!</span><br><span class="line">-------------------- GA config is: --------------------</span><br><span class="line">population_size:100</span><br><span class="line">lower_bound:[-2.048, -2.048]</span><br><span class="line">mutation_rate_exp:1</span><br><span class="line">select_method:proportion</span><br><span class="line">code_type:binary</span><br><span class="line">global_generations_step:200</span><br><span class="line">generations:200</span><br><span class="line">mutation_method:uniform</span><br><span class="line">complex_constraints_method:penalty</span><br><span class="line">binary_code_length:20</span><br><span class="line">cross_method:uniform</span><br><span class="line">arithmetic_cross_alpha:0.1</span><br><span class="line">func:&lt;function Rosenbrock at 0x7fe5fd538a60&gt;</span><br><span class="line">upper_bound:[2.048, 2.048]</span><br><span class="line">cross_code:False</span><br><span class="line">mutation_rate:0.05</span><br><span class="line">cross_rate_exp:1</span><br><span class="line">complex_constraints_C:1000000.0</span><br><span class="line">cross_rate:0.8</span><br><span class="line">variables_num:2</span><br><span class="line">M:100000000.0</span><br><span class="line">complex_constraints:None</span><br><span class="line">none_uniform_mutation_rate:1</span><br><span class="line">tournament_num:2</span><br><span class="line">arithmetic_cross_exp:1</span><br><span class="line">func_type:max</span><br><span class="line">-------------------- GA caculation result is: --------------------</span><br><span class="line">global best target generation index/total generations:75/200</span><br><span class="line">global best point:[-2.04776953 -2.04537109]</span><br><span class="line">global best target:3901.4655271502425</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>图2是每代最优值的计算结果:</p>
+<p><center><img src="http://t1.aixinxi.net/o_1cfke3r4d1moe11q1sbo12b41ncua.png-w.jpg"></center></p>
+<p><center>图2 GA Rosenbrock 函数运行200代寻优结果</center><br>替换成Rosenbrock函数之后，函数的运行时间从6秒多减少到1秒多(函数变量个数明显减少了),这说明GA的运行时间与目标函数的变量个数是显著相关的。最后找到的全局极大值点为(-2.04776953,-2.04537109)和真实全局极大值点(-2.048,-2.048)已经很接近了。<br>&nbsp;&nbsp;&nbsp;&nbsp;SGA类是GA类的父类，所以GA类和SGA类有一些公共的属性，比如<code>generations</code>,<code>population_size</code>,<code>func_type</code>等。和SGA一样的参数这里就不再列举了，如下是GA特有的一些参数:</p>
+<ul>
+<li>cross_rate_exp:cross_rate指数递增的参数取值,即变异率按照$r_t=r_0 \beta^t$,这里$r_t$表示t次迭代的交叉率,$r_0$是初始的交叉率，$\beta$就是这里的<code>cross_rate_exp</code>,默认取值为1,一般设置为一个比1稍大的数字，比如1.0001等;</li>
+<li>mutation_rate_exp:mutation_rate指数递增参数取值,具体含义和<code>cross_rate_exp</code>类似;</li>
+<li></li>
 </ul>
 
       
@@ -541,10 +553,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -554,6 +562,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
               </li>
              
               <li class="article-tag-list-item">
