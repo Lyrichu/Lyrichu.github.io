@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://t1.aixinxi.net/o_1cfk6qi2e1vok1vpvpf7jir1fvra.png-w.jpg">
 <meta property="og:image" content="http://t1.aixinxi.net/o_1cfke3r4d1moe11q1sbo12b41ncua.png-w.jpg">
-<meta property="og:updated_time" content="2018-06-10T09:05:54.657Z">
+<meta property="og:updated_time" content="2018-06-10T09:27:21.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sopt:一个简单的python最优化库">
 <meta name="twitter:description" content="引言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近有些朋友总来问我有关遗传算法的东西，我是在大学搞数学建模的时候接触过一些最优化和进化算法方面的东西，以前也写过几篇博客记录过,比如遗传算法的C语言实现(一):以非线性函数求极值为例和C语言实现粒子群算法(PSO)一等，如果对原理有兴趣的话可以去我的博客具体查看:Lyrichu’s Blog。所以突发奇想，干脆把以前写的一些进化算法比如遗传算法">
@@ -225,7 +225,11 @@
 <ul>
 <li>cross_rate_exp:cross_rate指数递增的参数取值,即变异率按照$r_t=r_0 \beta^t$,这里$r_t$表示t次迭代的交叉率,$r_0$是初始的交叉率，$\beta$就是这里的<code>cross_rate_exp</code>,默认取值为1,一般设置为一个比1稍大的数字，比如1.0001等;</li>
 <li>mutation_rate_exp:mutation_rate指数递增参数取值,具体含义和<code>cross_rate_exp</code>类似;</li>
-<li></li>
+<li>code_type:采用什么样的编码方式,有三种取值:’binary’表示二进制编码(默认),’gray’表示采用格雷编码,’real’表示采用实数编码。其中格雷编码是一种改进的二进制编码，其优点在于进行交叉、变异等操作时，改变了染色体基因的某几个位置，二进制编码对应的实数值可能会发生非常大的变化，而格雷编码一般不会。二进制编码与格雷编码的转换可以参考附录。</li>
+<li>cross_code:这是一个布尔值,表示是否对二进制编码或格雷码采用交叉编码的方式。具体说明参考附录。</li>
+<li>select_method:选择操作方法，有如下的6种取值:</li>
+<li>1.’proportion’:表示比例选择(轮盘赌法)</li>
+<li>2.</li>
 </ul>
 
       
@@ -553,6 +557,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -562,10 +570,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
               </li>
              
               <li class="article-tag-list-item">
