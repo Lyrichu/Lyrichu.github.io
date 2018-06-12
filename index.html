@@ -236,7 +236,7 @@
 <li>‘stochastic_tournament’:表示随机锦标赛法(以上6种选择方式详细说明请参考附录)</li>
 </ol>
 <ul>
-<li>rank_select_probs:仅当select_method取值为’rank’时，该参数才起作用，表示采用排序选择时，适应度从低到高每个个体被选择的概率，默认为None,采用$p_i=\frac{i}{\sum_{j=1}^{n}j}),i=1,2,…,n$的方式计算，其中$n$表示种群个数,$p_i$表示第$i$个个体被选择的概率，所有概率之和为1，如果取值不为None,你应该传入一个size为<code>population_size</code>的ndarray,所有元素按照递增排序，数组和为1;</li>
+<li>rank_select_probs:仅当select_method取值为’rank’时，该参数才起作用，表示采用排序选择时，适应度从低到高每个个体被选择的概率，默认为None,采用$p_i=\frac{i}{\sum_{j=1}^{n}j},i=1,2,…,n$的方式计算，其中$n$表示种群个数,$p_i$表示第$i$个个体被选择的概率，所有概率之和为1，如果取值不为None,你应该传入一个size为<code>population_size</code>的ndarray,所有元素按照递增排序，数组和为1;</li>
 <li>tournament_num:如果select_method取值为’stochastic_tournament’,该值表示锦标赛竞争者数量;</li>
 <li>cross_method:交叉方法,有如下4种取值:</li>
 </ul>
@@ -247,7 +247,25 @@
 <li>‘arithmetic’:表示算术交叉,只有当编码采用实数编码时，才能使用算术交叉</li>
 </ol>
 <ul>
-<li>arithmetic_cross_alpha:</li>
+<li>arithmetic_cross_alpha:算术交叉的系数，算术交叉的公式为:$x_{new1}=\alpha x_1 + (1-\alpha)x_2,x_{new2}=\alpha x_2 + (1-\alpha)x_1$,这里的$\alpha$即表示<code>arithmetic_cross_alpha</code>,其默认值为0.1;</li>
+<li>‘arithmetic_cross_exp’:算术交叉系数按照指数递增，即$\alpha_t = \alpha r^t$,这里$\alpha_t$表示第t代的算术交叉系数,$\alpha$是初始交叉系数,$r$即是这里的<code>arithmetic_cross_exp</code>,默认取值为1，一般取一个比1稍大的数，比如1.0001,t是进化代数;</li>
+<li>‘mutation_method’:变异方法，有如下5种取值:</li>
+</ul>
+<ol>
+<li>simple:即简单变异，随机选择一个染色体上的基因，按照变异概率进行变异</li>
+<li>uniform:即均匀变异,每个染色体上的每个基因都按照变异概率进行变异</li>
+<li>boundary:边界变异,每个基因进行变异以后的取值只能去边界值,比如说各以0.5的概率取得其上界和下界，这种变异方式仅适用于实数编码的情况，一般在目标函数的最优点靠近边界时使用</li>
+<li>none_uniform:非均匀变异，我们不是取均匀分布的随机数去替换原来的基因，而是在原来基因的基础上做一点微小的随机扰动，扰动以后的结果作为新的基因值，具体来说，我们采用的是这样的变异方式:1)if random(0,1) = 0,$x_k^{‘} = x_k + \bigtriangleup (t,U_{max}^{k}-x_k)$;2)if random(0,1) = 1,$x_k{‘} = x_k - \bigtriangleup (t,x_k -U_{min}{k})$ 其中 $\bigtriangleup(t,y)=y(1-r^{(1-t/T)b})$,$r$是0-1均匀分布的一个随机数，$T$是最大进化代数，$b$是一个系统参数，表示随机扰动对于进化代数的依赖长度，默认值为1</li>
+<li>gaussian:高斯变异,即使用高斯分布去替代均匀分布来进行变异,由高斯分布的特点可以知道，这种变异方式也是在原个体区域附近的某个局部区域进行重点搜索，这里高斯分布的均值$\mu$定义为$\mu = \frac{U_{min}^{k}+U_{max}^{k}}{2}$,标准差$\sigma=\frac{U_{max}^{k}-U_{min}^{k}}{6}$</li>
+</ol>
+<ul>
+<li>none_uniform_mutation_rate:即均匀分布<code>none_uniform</code>中定义的系统参数$b$;</li>
+<li><p>complex_constraints:复杂约束,默认值为None,即没有复杂约束,只有简单的边界约束,如果有复杂约束，其取值应该是$[func_1,func_2,…,func_n]$,<br>其中$func_i$表示第$i$个复杂约束函数名，比如对于一个复杂约束函数$func_1:$x_1^2+x_2^2 &lt; 3$,其复杂约束函数应该这样定义:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def func1(x):</span><br><span class="line">	x1 = x[0]</span><br><span class="line">	x2 = x[1]</span><br><span class="line">	return x1**2 + x2**2 - 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>complex_constraints_method:复杂约束求解的方法,默认是<code>penalty</code>即惩罚函数法，暂时不支持其他的求解方式;</p>
+</li>
+<li>complex_constraints_C:采用<code>penalty</code>求解复杂约束的系数$C$,比如对于某一个约束$$x_1^2+x_2^2 &lt; 3$,GA在求解过程中，违反了该约束,即解满足$x_1^2+x_2^2 \ge 3$,那么我们对目标函数增加一个惩罚项: $C(x_1^2+x_2^2-3)$,$C$一般去一个很大的正数，默认值为$10^6$。</li>
 </ul>
 
       
@@ -1330,10 +1348,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">gif</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PIL</a>
               </li>
              
@@ -1342,15 +1356,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sopt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">optimization</a>
+                <a href="javascript:void(0)" class="js-tag color4">gif</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,6 +1373,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文解读</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sopt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">optimization</a>
               </li>
              
               <li class="article-tag-list-item">
