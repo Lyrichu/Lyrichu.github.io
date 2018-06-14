@@ -154,6 +154,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sublime-LatexTools引用参考文献" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/14/sublime-LatexTools引用参考文献/">sublime+LatexTools引用参考文献</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/14/sublime-LatexTools引用参考文献/" class="archive-article-date">
+  	<time datetime="2018-06-14T07:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;在用sublime+LatexTools一段时间之后，发现用它来写Latex真的是非常方便，配置好TexLive之后直接CTRL+B就可以直接编译运行了，so cool!但是最近写课程论文的时候，我在引用参考文献时碰到了一些麻烦。不怕大家笑话，本来我写参考文献都是直接手动标注[1],[2]…然后手动写参考文献的。一旦参考文献多起来，这简直要命。所以我这次终于决定换一种方式，看看有没有什么好办法可以自动导出参考文献的。一找，办法果然还是很多的。这里简单记录我使用的一种办法。<br>&nbsp;&nbsp;&nbsp;&nbsp;首先，你需要维护一个.bib文件,里面是特定格式的你的参考文献。一般是如下的形式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@article&#123;simonyan2015very,</span><br><span class="line">    title=&quot;Very Deep Convolutional Networks for Large-Scale Image Recognition&quot;,</span><br><span class="line">    author=&quot;Karen &#123;Simonyan&#125; and Andrew &#123;Zisserman&#125;&quot;,</span><br><span class="line">    journal=&quot;international conference on learning representations&quot;,</span><br><span class="line">    year=&quot;2015&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@inproceedings&#123;krizhevsky2012imagenet,</span><br><span class="line">    title=&quot;ImageNet Classification with Deep Convolutional Neural Networks&quot;,</span><br><span class="line">    author=&quot;Alex &#123;Krizhevsky&#125; and Ilya &#123;Sutskever&#125; and Geoffrey E. &#123;Hinton&#125;&quot;,</span><br><span class="line">    booktitle=&quot;Advances in Neural Information Processing Systems 25&quot;,</span><br><span class="line">    pages=&quot;1097--1105&quot;,</span><br><span class="line">    year=&quot;2012&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@inproceedings&#123;he2016deep,</span><br><span class="line">    title=&quot;Deep Residual Learning for Image Recognition&quot;,</span><br><span class="line">    author=&quot;Kaiming &#123;He&#125; and Xiangyu &#123;Zhang&#125; and Shaoqing &#123;Ren&#125; and Jian &#123;Sun&#125;&quot;,</span><br><span class="line">    booktitle=&quot;2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)&quot;,</span><br><span class="line">    pages=&quot;770--778&quot;,</span><br><span class="line">    year=&quot;2016&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>article</code>,<code>inproceedings</code>等表示的是文献类型,<code>simonyan2015very</code>,<code>he2016deep</code>表示的参考文献的id,这个id必须必须是独一无二的，后面会使用<code>\cite{simonyan2015very}</code>这种形式来引用参考文献。你可能会问，上面.bib文件难道需要手动填写吗?当然不会啦，有一种最简便的方法可以自动生成.bib文件，那就是去google scholar(可能需要翻墙)或者<a href="https://academic.microsoft.com/" target="_blank" rel="noopener">bing scholar</a>(推荐),搜索你引用的文献，它会自动生成.bib文件。以bing scholar为例，如图１所示:</p>
+<p><center><img src="http://t1.aixinxi.net/o_1cfum2mvhq9pj571nm41jm518sfa.png-w.jpg"></center></p>
+<p><center>图１ bing scholar 导出.bib文件</center><br>&nbsp;&nbsp;&nbsp;&nbsp;导出.bib文件之后，我们需要在latex文件最后添加如下的几行命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\renewcommand\refname&#123;参考文献&#125; </span><br><span class="line">\bibliographystyle&#123;plain&#125;</span><br><span class="line">\bibliography&#123;mybibtex&#125;</span><br></pre></td></tr></table></figure></p>
+<p>默认生成的参考文献名字是<code>Reference</code>,如果你的论文是用中文书写的话，第一行命令可以以<code>参考文献</code>命名;第二行是设置参考文献的格式;第三行<code>mybibtex</code>是你的.bib文件的名字(这里是<code>mybibtex.bib</code>,注意不需要.bib后缀)。如果你需要在文中的某个地方引用某篇参考文献的话，使用<code>\cite{}</code>命令会自动弹出所有的参考文献列表框，然后你选择相应的文献就可以自动引用了。引用是采用<code>\cite{simonyan2015very}</code>的形式，其中<code>simonyan2015very</code>是文献的id标识。我在实际操作的过程中遇到了<code>bib files not found</code>的问题。找了半天终于找到了问题，只需要在latex文件的首行加上<code>% !TEX root = xxx.tex</code>的命令即可,其中<code>xxx.tex</code>是你的latex源文件的名字。<br>&nbsp;&nbsp;&nbsp;&nbsp;上面的步骤都完成之后，就可以编译latex文件了。这里如果使用普通的latex编译方式<code>xelatex *.tex</code>是没有办法成功生成参考文献的。需要依次执行如下的四个命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xelatex *.tex</span><br><span class="line">bibtex *.aux</span><br><span class="line">xelatex *.tex</span><br><span class="line">xelatex *.tex</span><br></pre></td></tr></table></figure></p>
+<p>才可以成功编译。<br>&nbsp;&nbsp;&nbsp;&nbsp;最后,你也可以参考知乎的这个回答:<a href="https://www.zhihu.com/question/23565739/answer/51511029" target="_blank" rel="noopener">如何在LaTeX写作中管理参考文献?</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LatexTools</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">sublime</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">参考文献</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/14/sublime-LatexTools引用参考文献/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sopt-一个简单的python最优化库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1471,6 +1558,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">搭建博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LatexTools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参考文献</a>
               </li>
              
               <li class="article-tag-list-item">
