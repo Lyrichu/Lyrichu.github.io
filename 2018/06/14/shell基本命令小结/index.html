@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
 <meta property="og:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-14T14:05:34.257Z">
+<meta property="og:updated_time" content="2018-06-14T14:12:14.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell基本命令小结">
 <meta name="twitter:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
@@ -183,9 +183,10 @@
 <h4 id="2-3-数组"><a href="#2-3-数组" class="headerlink" title="2.3 数组"></a>2.3 数组</h4><h5 id="2-3-1-数组创建"><a href="#2-3-1-数组创建" class="headerlink" title="2.3.1 数组创建"></a>2.3.1 数组创建</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> () create an array</span><br><span class="line">arr=(1 2 3 5 6)</span><br><span class="line">echo "arr[3] = $&#123;arr[3]&#125;"</span><br></pre></td></tr></table></figure>
 <p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr[3] = 5</span><br></pre></td></tr></table></figure></p>
 <h5 id="2-3-2-数组长度"><a href="#2-3-2-数组长度" class="headerlink" title="2.3.2 数组长度"></a>2.3.2 数组长度</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> get the length of array</span><br><span class="line">echo "length of arr is $&#123;#arr[*]&#125;" # 5</span><br><span class="line">echo "length of arr is $&#123;#arr[@]&#125;" # 5</span><br></pre></td></tr></table></figure>
-<p>可以按照<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出:</span><br></pre></td></tr></table></figure></p>
-<p>length of arr is 5<br>length of arr is 5<br><code>`</code> </p>
-
+<p>输出:</p>
+<pre><code>length of arr is 5
+length of arr is 5
+</code></pre>
       
 
       
