@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
-  <title>Tag: Github | Lyrichu&#39;s Blog</title>
+  <title>shell基本命令小结 | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="To be the best yourself!">
-<meta name="keywords" content="coding,math,machine learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lyrichu&#39;s Blog">
-<meta property="og:url" content="http://Lyrichu.github.io/tags/Github/index.html">
+  <meta name="description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
+<meta name="keywords" content="shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell基本命令小结">
+<meta property="og:url" content="http://Lyrichu.github.io/2018/06/14/shell基本命令小结/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="To be the best yourself!">
+<meta property="og:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-14T14:05:34.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lyrichu&#39;s Blog">
-<meta name="twitter:description" content="To be the best yourself!">
+<meta name="twitter:title" content="shell基本命令小结">
+<meta name="twitter:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
   
@@ -152,64 +153,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-shell基本命令小结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/05/Github-马上要成微软的了/" class="archive-article-date">
-  	<time datetime="2018-06-05T08:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/05/Github-马上要成微软的了/">Github 马上要成微软的了?</a>
+    <h1 class="article-title" itemprop="name">
+      shell基本命令小结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/14/shell基本命令小结/" class="archive-article-date">
+  	<time datetime="2018-06-14T12:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-echo和if-else-fi命令"><a href="#1-echo和if-else-fi命令" class="headerlink" title="1.echo和if else fi命令"></a>1.<code>echo</code>和<code>if else fi</code>命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">echo hello;echo there</span><br><span class="line">filename=demo.sh</span><br><span class="line">if [ -e "$filename" ]; then </span><br><span class="line">    echo "$filename already exists!";cp $filename $filename.bak</span><br><span class="line">else</span><br><span class="line">    echo "$filename does not exist!";</span><br><span class="line">fi;</span><br><span class="line">echo "File test complete!"</span><br></pre></td></tr></table></figure>
+<p>运行结果(demo.sh不存在):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">there</span><br><span class="line">demo.sh does not exist!</span><br><span class="line">File test complete!</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是<code>filename=demo.sh</code>等号两边是不能有空格的;<code>if [ -e &quot;$filename&quot; ]</code>中[]左右两侧都是有空格的。</p>
+<h3 id="2-shell基本操作"><a href="#2-shell基本操作" class="headerlink" title="2.shell基本操作"></a>2.shell基本操作</h3><h4 id="2-1-变量大于，等于，小于"><a href="#2-1-变量大于，等于，小于" class="headerlink" title="2.1 变量大于，等于，小于"></a>2.1 变量大于，等于，小于</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">a=1</span><br><span class="line">if [ $a -gt 0 ]; then</span><br><span class="line">    echo "greater than zero!"</span><br><span class="line">else</span><br><span class="line">    echo "no more than zero!"</span><br><span class="line">fi</span><br><span class="line">if [[ $a -lt 0 ]]; then</span><br><span class="line">    echo "less than zero!"</span><br><span class="line">else</span><br><span class="line">    echo "no less than zero!"</span><br><span class="line">fi</span><br><span class="line">if [[ a -eq 1 ]]; then</span><br><span class="line">    echo "equal to 1!"</span><br><span class="line">else</span><br><span class="line">    echo "not equal to 1!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p><code>-gt</code>表示大于;<code>-lt</code>表示小于;<code>-eq</code>表示等于。运行结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">greater than zero!</span><br><span class="line">no less than zero!</span><br><span class="line">equal to 1!</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-2-三目运算符"><a href="#2-2-三目运算符" class="headerlink" title="2.2 三目运算符(?:)"></a>2.2 三目运算符(?:)</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ? is 3 operator</span><br><span class="line">b=10</span><br><span class="line">((t=b&lt;20?6:4)) # t = 6</span><br><span class="line">echo "t=$t"</span><br><span class="line"><span class="meta">#</span> variable in () is a part region variable</span><br><span class="line">(b=20;echo "b = $b") # b = 20</span><br><span class="line">echo "b = $b" # b = 10</span><br></pre></td></tr></table></figure>
+<p>和C,java等语言类似,shell中的<code>?:</code>也是三目运算符。<code>()</code>表示一个建立局部作用域,可以暂时屏蔽全局变量。上式的运行结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t=6</span><br><span class="line">b = 20</span><br><span class="line">b = 10</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-3-数组"><a href="#2-3-数组" class="headerlink" title="2.3 数组"></a>2.3 数组</h4><h5 id="2-3-1-数组创建"><a href="#2-3-1-数组创建" class="headerlink" title="2.3.1 数组创建"></a>2.3.1 数组创建</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> () create an array</span><br><span class="line">arr=(1 2 3 5 6)</span><br><span class="line">echo "arr[3] = $&#123;arr[3]&#125;"</span><br></pre></td></tr></table></figure>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr[3] = 5</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-3-2-数组长度"><a href="#2-3-2-数组长度" class="headerlink" title="2.3.2 数组长度"></a>2.3.2 数组长度</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> get the length of array</span><br><span class="line">echo "length of arr is $&#123;#arr[*]&#125;" # 5</span><br><span class="line">echo "length of arr is $&#123;#arr[@]&#125;" # 5</span><br></pre></td></tr></table></figure>
+<p>可以按照<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出:</span><br></pre></td></tr></table></figure></p>
+<p>length of arr is 5<br>length of arr is 5<br><code>`</code> </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持，我会努力创作更好的文章!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microsoft</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Lyrichu.github.io/2018/06/14/shell基本命令小结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/14/sublime-LatexTools引用参考文献/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sublime+LatexTools引用参考文献</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="shell基本命令小结" data-title="shell基本命令小结" data-url="http://Lyrichu.github.io/2018/06/14/shell基本命令小结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://Lyrichu.github.io/2018/06/14/shell基本命令小结/", 
+    sourceId: "shell基本命令小结",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="shell基本命令小结" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -232,9 +388,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
