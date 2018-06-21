@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
 <meta property="og:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T06:08:31.698Z">
+<meta property="og:updated_time" content="2018-06-21T06:16:02.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell基本命令小结">
 <meta name="twitter:description" content="1.echo和if else fi命令123456789#!/bin/bashecho hello;echo therefilename=demo.shif [ -e &quot;$filename&quot; ]; then     echo &quot;$filename already exists!&quot;;cp $filename $filename.bakelse    echo &quot;$filename does not">
@@ -232,6 +232,12 @@
 <p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The even number that less than 100&apos;s sum is 2450</span><br></pre></td></tr></table></figure></p>
 <h4 id="3-4-输出星号-金字塔"><a href="#3-4-输出星号-金字塔" class="headerlink" title="3.4 输出星号(*)金字塔"></a>3.4 输出星号(*)金字塔</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span> output the pyramid of stars</span><br><span class="line">for i in 4 3 2 1 0</span><br><span class="line">do</span><br><span class="line">    j=$i </span><br><span class="line">    while [[ $j -gt 0 ]]</span><br><span class="line">    do</span><br><span class="line">        echo -n " "</span><br><span class="line">        let "j--"</span><br><span class="line">    done</span><br><span class="line">    j=`expr 9 - 2 \* $i`</span><br><span class="line">    while [[ $j -gt 0 ]]</span><br><span class="line">    do</span><br><span class="line">        echo -n "*"</span><br><span class="line">        let "j--"</span><br><span class="line">    done</span><br><span class="line">    j=$i </span><br><span class="line">    while [[ $j -gt 0 ]]</span><br><span class="line">    do</span><br><span class="line">        echo -n " "</span><br><span class="line">        let "j--"</span><br><span class="line">    done</span><br><span class="line">    echo ""</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    *    </span><br><span class="line">   ***   </span><br><span class="line">  *****  </span><br><span class="line"> ******* </span><br><span class="line">*********</span><br></pre></td></tr></table></figure></p>
+<p></p><h3>Reference</h3><p></p>
+<ol>
+<li><a href="http://www.cnblogs.com/chengmo/archive/2010/10/02/1841355.html" target="_blank" rel="noopener">linux shell 字符串操作（长度，查找，替换）详解</a></li>
+<li><a href="https://www.cnblogs.com/chengmo/archive/2010/09/30/1839632.html" target="_blank" rel="noopener">linux shell 数组建立及使用技巧</a></li>
+<li><a href="https://www.shiyanlou.com/courses/944" target="_blank" rel="noopener">(实验楼)高级 bash 脚本编程指南</a></li>
+</ol>
 
       
 
