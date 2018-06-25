@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
   <title>DeepFM(论文翻译) | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
+  <meta name="description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
 <meta name="keywords" content="DeepFM,FM,CTR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepFM(论文翻译)">
 <meta property="og:url" content="http://Lyrichu.github.io/2018/06/25/DeepFM-论文翻译/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
+<meta property="og:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-25T10:24:47.188Z">
+<meta property="og:updated_time" content="2018-06-25T10:58:27.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepFM(论文翻译)">
-<meta name="twitter:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
+<meta name="twitter:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
   
@@ -174,7 +174,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>原文地址:<a href="https://arxiv.org/abs/1703.04247" target="_blank" rel="noopener">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a></p>
-<p></p><h1>摘要</h1><br>＆nbsp;&nbsp;&nbsp;&nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(bias),或者需要专业的特征工程经验。在本文中，我们展示了一个可以同时强调低阶和高阶特征交互的end-to-end的学习模型。本文提出了一个名为<strong>DeepFM</strong>的新的神经网络架构，结合了推荐中强大的因子机(factorization machines)以及用于学习特征的深度学习。与最近Google提出的Wide &amp; Deep model相比，DeepFM在”wide”和”deep”部分有一个共享的输入，除了原始的特征之外不需要额外的特征工程。本文同时在标准数据以及商业数据上，进行了丰富的实验以展示DeepFM的有效性与高效性，同时与现有的CTR预估模型进行了对比。<p></p>
+<p><center><h1>摘要</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(bias),或者需要专业的特征工程经验。在本文中，我们展示了一个可以同时强调低阶和高阶特征交互的end-to-end的学习模型。本文提出了一个名为<strong>DeepFM</strong>的新的神经网络架构，结合了推荐中强大的因子机(factorization machines)以及用于学习特征的深度学习。与最近Google提出的Wide &amp; Deep model相比，DeepFM在”wide”和”deep”部分有一个共享的输入，除了原始的特征之外不需要额外的特征工程。本文同时在标准数据以及商业数据上，进行了丰富的实验以展示DeepFM的有效性与高效性，同时与现有的CTR预估模型进行了对比。</p>
+<p><center><h1>1.介绍</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;在推荐系统中CTR预估是非常重要的部分，具体的任务就是预测对于推荐商品用户点击的概率。在很多推荐系统中，目标是最大化点击的次数，推荐给用户的商品也可以按照预测的CTR进行排序;在其他的应用场景中比如在线广告，提高收益也是非常重要的，因此排序的策略可以调整为所有候选商品的CTRxbid,其中”bid”是用户如果点击了商品系统获得的收益。无论是哪种情况，很明显关键就是正确地估计CTR。<br>&nbsp;&nbsp;&nbsp;&nbsp;学习用户点击行为背后的隐含的特征交互对于CTR预估是非常重要的。通过我们对主流App市场的调查，我们发现人们经常在用餐时间下载外卖类App,这暗示了App类别和时间的二阶特征交互可以作为CTR的一个重要signal。</p>
 
       
 
@@ -521,6 +522,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -530,10 +535,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
               </li>
              
               <li class="article-tag-list-item">
