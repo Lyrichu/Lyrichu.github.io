@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
-  <title>Github 马上要成微软的了? | Lyrichu&#39;s Blog</title>
+  <title>DeepFM(论文翻译) | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近程序员圈传的很火的一件事就是:Github马上要被微(巨)软(硬)收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了?作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github,该用还不是照样用?总不会要边收费???今天打开Github首页的时候，它就推送了一条新闻:Microso">
-<meta name="keywords" content="Github,Microsoft">
+  <meta name="description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
+<meta name="keywords" content="DeepFM,FM,CTR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github 马上要成微软的了?">
-<meta property="og:url" content="http://Lyrichu.github.io/2018/06/05/Github-马上要成微软的了/index.html">
+<meta property="og:title" content="DeepFM(论文翻译)">
+<meta property="og:url" content="http://Lyrichu.github.io/2018/06/25/DeepFM-论文翻译/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近程序员圈传的很火的一件事就是:Github马上要被微(巨)软(硬)收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了?作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github,该用还不是照样用?总不会要边收费???今天打开Github首页的时候，它就推送了一条新闻:Microso">
+<meta property="og:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-05T08:47:42.441Z">
+<meta property="og:updated_time" content="2018-06-25T10:24:47.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github 马上要成微软的了?">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近程序员圈传的很火的一件事就是:Github马上要被微(巨)软(硬)收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了?作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github,该用还不是照样用?总不会要边收费???今天打开Github首页的时候，它就推送了一条新闻:Microso">
+<meta name="twitter:title" content="DeepFM(论文翻译)">
+<meta name="twitter:description" content="原文地址:DeepFM: A Factorization-Machine based Neural Network for CTR Prediction 摘要＆nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(b">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
   
@@ -153,28 +153,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Github-马上要成微软的了" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-DeepFM-论文翻译" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Github 马上要成微软的了?
+      DeepFM(论文翻译)
     </h1>
   
 
         
-        <a href="/2018/06/05/Github-马上要成微软的了/" class="archive-article-date">
-  	<time datetime="2018-06-05T08:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+        <a href="/2018/06/25/DeepFM-论文翻译/" class="archive-article-date">
+  	<time datetime="2018-06-25T09:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="nbsp-nbsp-nbsp-nbsp-最近程序员圈传的很火的一件事就是-Github马上要被微-巨-软-硬-收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了-作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github-该用还不是照样用-总不会要边收费-今天打开Github首页的时候，它就推送了一条新闻-Microsoft-is-acquiring-GitHub-Read-our-blog-and-Satya-Nadella’s-post-to-learn-more。所以我就点进去看了一下，原来是Github的创始人兼CEO-defunkt的公开信，下面就让我们看看他是怎么说的吧-以下内容翻译自-https-blog-github-com-2018-06-04-github-microsoft-。"><a href="#nbsp-nbsp-nbsp-nbsp-最近程序员圈传的很火的一件事就是-Github马上要被微-巨-软-硬-收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了-作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github-该用还不是照样用-总不会要边收费-今天打开Github首页的时候，它就推送了一条新闻-Microsoft-is-acquiring-GitHub-Read-our-blog-and-Satya-Nadella’s-post-to-learn-more。所以我就点进去看了一下，原来是Github的创始人兼CEO-defunkt的公开信，下面就让我们看看他是怎么说的吧-以下内容翻译自-https-blog-github-com-2018-06-04-github-microsoft-。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;最近程序员圈传的很火的一件事就是:Github马上要被微(巨)软(硬)收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了?作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github,该用还不是照样用?总不会要边收费???今天打开Github首页的时候，它就推送了一条新闻:Microsoft is acquiring GitHub! Read our blog and Satya Nadella’s post to learn more。所以我就点进去看了一下，原来是Github的创始人兼CEO defunkt的公开信，下面就让我们看看他是怎么说的吧(以下内容翻译自:https://blog.github.com/2018-06-04-github-microsoft/)。"></a>&nbsp;&nbsp;&nbsp;&nbsp;最近程序员圈传的很火的一件事就是:Github马上要被微(巨)软(硬)收购了！据传好像是50亿美金，刷知乎的时候看到好像最近有不少用户从Github跑到Gitlab了?作为一个小白，其实我对这件事情并没有太大的看法。不管微软要不要收购Github,该用还不是照样用?总不会要边收费???今天打开Github首页的时候，它就推送了一条新闻:<strong>Microsoft is acquiring GitHub! Read our blog and Satya Nadella’s post to learn more</strong>。所以我就点进去看了一下，原来是Github的创始人兼CEO defunkt的公开信，下面就让我们看看他是怎么说的吧(以下内容翻译自:<a href="https://blog.github.com/2018-06-04-github-microsoft/" target="_blank" rel="noopener">https://blog.github.com/2018-06-04-github-microsoft/</a>)。</h4><blockquote>
-</blockquote>
+        <p>原文地址:<a href="https://arxiv.org/abs/1703.04247" target="_blank" rel="noopener">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a></p>
+<p></p><h1>摘要</h1><br>＆nbsp;&nbsp;&nbsp;&nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(bias),或者需要专业的特征工程经验。在本文中，我们展示了一个可以同时强调低阶和高阶特征交互的end-to-end的学习模型。本文提出了一个名为<strong>DeepFM</strong>的新的神经网络架构，结合了推荐中强大的因子机(factorization machines)以及用于学习特征的深度学习。与最近Google提出的Wide &amp; Deep model相比，DeepFM在”wide”和”deep”部分有一个共享的输入，除了原始的特征之外不需要额外的特征工程。本文同时在标准数据以及商业数据上，进行了丰富的实验以展示DeepFM的有效性与高效性，同时与现有的CTR预估模型进行了对比。<p></p>
 
       
 
@@ -209,11 +209,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DeepFM</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microsoft</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">FM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTR</a>
         		</li>
       		
 		</ul>
@@ -269,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://Lyrichu.github.io/2018/06/05/Github-马上要成微软的了/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Lyrichu.github.io/2018/06/25/DeepFM-论文翻译/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/10/sopt-一个简单的python最优化库/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          sopt:一个简单的python最优化库
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/05/条件GAN论文简单解读/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">条件GAN论文简单解读</div>
+    <a href="/2018/06/14/shell基本命令小结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shell基本命令小结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -322,7 +317,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Github-马上要成微软的了" data-title="Github 马上要成微软的了?" data-url="http://Lyrichu.github.io/2018/06/05/Github-马上要成微软的了/"></div>
+	<div class="ds-thread" data-thread-key="DeepFM-论文翻译" data-title="DeepFM(论文翻译)" data-url="http://Lyrichu.github.io/2018/06/25/DeepFM-论文翻译/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -345,8 +340,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://Lyrichu.github.io/2018/06/05/Github-马上要成微软的了/", 
-    sourceId: "Github-马上要成微软的了",
+    url: "http://Lyrichu.github.io/2018/06/25/DeepFM-论文翻译/", 
+    sourceId: "DeepFM-论文翻译",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -355,7 +350,7 @@
   
 
   
-  <div id="SOHUCS" sid="Github-马上要成微软的了" ></div> 
+  <div id="SOHUCS" sid="DeepFM-论文翻译" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

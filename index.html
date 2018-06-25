@@ -154,6 +154,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-DeepFM-论文翻译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/25/DeepFM-论文翻译/">DeepFM(论文翻译)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/25/DeepFM-论文翻译/" class="archive-article-date">
+  	<time datetime="2018-06-25T09:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文地址:<a href="https://arxiv.org/abs/1703.04247" target="_blank" rel="noopener">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a></p>
+<p></p><h1>摘要</h1><br>＆nbsp;&nbsp;&nbsp;&nbsp;学习在用户行为之后复杂的特征交互对于最大化推荐系统中的CTR(click-through-rate)是至关重要的。尽管已经取得了巨大的成功,现有的方法对于低阶或者高阶的特征交互有着很强的偏差(bias),或者需要专业的特征工程经验。在本文中，我们展示了一个可以同时强调低阶和高阶特征交互的end-to-end的学习模型。本文提出了一个名为<strong>DeepFM</strong>的新的神经网络架构，结合了推荐中强大的因子机(factorization machines)以及用于学习特征的深度学习。与最近Google提出的Wide &amp; Deep model相比，DeepFM在”wide”和”deep”部分有一个共享的输入，除了原始的特征之外不需要额外的特征工程。本文同时在标准数据以及商业数据上，进行了丰富的实验以展示DeepFM的有效性与高效性，同时与现有的CTR预估模型进行了对比。<p></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DeepFM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">FM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTR</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/25/DeepFM-论文翻译/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-shell基本命令小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1413,158 +1496,10 @@
 
 
   
-    <article id="post-haskell简明入门-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/27/haskell简明入门-一/">haskell简明入门(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/27/haskell简明入门-一/" class="archive-article-date">
-  	<time datetime="2018-05-27T09:08:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="本文的主要内容参考自《Haskell趣学指南》"><a href="#本文的主要内容参考自《Haskell趣学指南》" class="headerlink" title="本文的主要内容参考自《Haskell趣学指南》"></a>本文的主要内容参考自《Haskell趣学指南》</h3><p></p><h2>1. What is Haskell?</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;以下内容引用自<a href="https://www.haskell.org/" target="_blank" rel="noopener">Haskell</a>官网:<p></p>
-<blockquote>
-<p>Haskell是一个先进的，纯粹的函数式编程语言。一个典型的声明式地，静态类型的代码如下:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">primes</span> = filterPrime [<span class="number">2.</span>.] </span><br><span class="line">  <span class="keyword">where</span> filterPrime (p:xs) = </span><br><span class="line">          p : filterPrime [x | x &lt;- xs, x `mod` p /= <span class="number">0</span>]</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>Haskell 有如下的特性:</p>
-<blockquote>
-<ul>
-<li><strong>静态类型</strong>(Statically Typed)。Haskell的每一个表达式都有一个在编译时决定的类型。所有的由函数引用组合起来的类型必须相匹配(match up),否则无法正常编译。类型不仅仅是形式上的保证，更是用于表达程序结构的语言。</li>
-<li><strong>纯粹函数式</strong>(Purely functional)。Haskell的每一个函数都是数学意义上的(pure)。即使是有副作用的IO操作也不过是在描述在做什么，同样由纯粹的代码产生。没有声明或者指令，仅仅只有表达式，该表达式不能对变量进行修改(局部变量或者全局变量),或者是获取像时间、随机数这样的状态。</li>
-<li><strong>类型推断</strong>(Type Inference)。你并不需要在Haskell中显式地写出每一种类型，类型将会进行双向推断。当然，你也可以选择自己写出类型，或者让编译为你进行推断。</li>
-<li><strong>并发</strong>(Concurrent)。Haskell可以很容易进行并发编程，这得力于它可以显式地处理effects。它的王牌编译器GHC带有一个高性能的并行的垃圾回收器，还有一个轻量级的并发库，其中包含了很多的有用的并发函数原型以及抽象接口。</li>
-<li><strong>惰性计算</strong>(Lazy)。函数并不会直接计算它们的值。这意味着程序可以在一起组合地非常好，可以通过只写通常的函数就表达控制结构(if/else)。Haskell代码的纯粹性使得它可以轻松将函数链式组合，操作起来非常方便。</li>
-<li><strong>包</strong>(Packages)。你可以在public packages server 上找到非常多的活跃的开源Haskell packages。</li>
-</ul>
-</blockquote>
-<p></p><h2>2. How to use Haskell?</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;你可以下载Haskell的GHC编译器,该编译器可以解释也可以编译Haskell程序。GHC还有一个很有用的交互模式，在终端输入ghci即可进入交互模式。然后运行命令<code>:l demo.hs</code>就可以加载demo.hs中的函数(Haskell程序文件以hs结尾)。如果你对demo.hs做了修改，可以重新运行命令<code>:l demo.hs</code>以重新加载其中的函数。这是我们以后实验学习Haskell的基本流程。<p></p>
-<p></p><h2> 3. Basic Operations</h2><p></p>
-<p></p><h3> 3.1 基本类型</h3><br>&nbsp;&nbsp;&nbsp;&nbsp;在终端输入ghci进行入交互模式。如下是一些基本的运算，几乎不用解释就可以看懂。<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; <span class="number">2</span>+<span class="number">15</span></span><br><span class="line"><span class="number">17</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">45</span>*<span class="number">90</span></span><br><span class="line"><span class="number">4050</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">568</span><span class="number">-23</span></span><br><span class="line"><span class="number">545</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">3</span>/<span class="number">2</span></span><br><span class="line"><span class="number">1.5</span></span><br><span class="line"><span class="type">Prelude</span>&gt; (<span class="number">90</span><span class="number">-23</span>)*<span class="number">8</span></span><br><span class="line"><span class="number">536</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">50</span>*(<span class="number">100</span><span class="number">-9028</span>)</span><br><span class="line"><span class="number">-446400</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="type">True</span> &amp;&amp; <span class="type">False</span></span><br><span class="line"><span class="type">False</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="type">True</span> &amp;&amp; <span class="type">True</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="type">False</span> || <span class="type">True</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; not <span class="type">False</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; not (<span class="type">True</span> &amp;&amp; <span class="type">True</span>)</span><br><span class="line"><span class="type">False</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">5</span> == <span class="number">4</span></span><br><span class="line"><span class="type">False</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">5</span> == <span class="number">5</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="string">"Hello"</span> == <span class="string">"Hello"</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">5</span> /= <span class="number">4</span></span><br><span class="line"><span class="type">True</span></span><br><span class="line"><span class="type">Prelude</span>&gt; <span class="number">5</span> /= <span class="number">5</span></span><br><span class="line"><span class="type">False</span></span><br></pre></td></tr></table></figure><p></p>
-<p></p><h3> 3.2 基础函数 </h3> <p></p>
-<h4 id="3-2-1-Haskell-常用内置函数"><a href="#3-2-1-Haskell-常用内置函数" class="headerlink" title="3.2.1 Haskell 常用内置函数"></a>3.2.1 Haskell 常用内置函数</h4><ul>
-<li><strong>succ</strong>。succ 函数返回一个数的后继。比如:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; succ <span class="number">10</span></span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意Haskell中函数的调用参数是使用空格的，这一点和传统的编译型语言有很大的不同。</p>
-<ul>
-<li><p><strong>pred</strong>。pred函数和succ函数相反，它返回一个数字的前驱。比如:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; pred <span class="number">10</span></span><br><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>min</strong>。min函数接收两个数字参数，返回这两个数字的最小值。比如:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; min <span class="number">10</span> <span class="number">3.4</span></span><br><span class="line"><span class="number">3.4</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>如果要比较多个数字的最小值，直接传递多个数字作为参数会报错，比如:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; min <span class="number">1</span> <span class="number">19</span> <span class="number">23</span></span><br><span class="line">&lt;interactive&gt;:<span class="number">21</span>:<span class="number">1</span>:</span><br><span class="line">    <span class="type">Non</span> <span class="class"><span class="keyword">type</span>-variable argument in the constraint: <span class="type">Num</span> (<span class="title">a</span> -&gt; <span class="title">t</span>)</span></span><br><span class="line">    (<span class="type">Use</span> <span class="type">FlexibleContexts</span> to permit this)</span><br><span class="line">    <span class="type">When</span> checking that ‘it’ has the inferred <span class="class"><span class="keyword">type</span></span></span><br><span class="line">      it :: <span class="keyword">forall</span> a t. (<span class="type">Num</span> a, <span class="type">Num</span> (a -&gt; t), <span class="type">Ord</span> (a -&gt; t)) =&gt; t</span><br></pre></td></tr></table></figure></p>
-<p>我们可以通过多次调用min函数(注意需要加括号)来解决:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; min <span class="number">1</span> (min <span class="number">9</span> <span class="number">23</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p><strong>max</strong>。max函数返回两个数字的最大值。比如:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; max <span class="number">9.9</span> <span class="number">9.0</span></span><br><span class="line"><span class="number">9.9</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Haskell中<strong>函数</strong>拥有最高的优先级。下面两句是等效的:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; succ <span class="number">10</span> + max <span class="number">10</span> <span class="number">20</span> * <span class="number">3</span></span><br><span class="line"><span class="number">71</span></span><br><span class="line"><span class="type">Prelude</span>&gt; (succ <span class="number">10</span>) +(max <span class="number">10</span> <span class="number">20</span>)*<span class="number">3</span></span><br><span class="line"><span class="number">71</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意<code>succ 9*10</code>的值是100而不是91，这是因为计算的顺序是先计算<code>succ 9</code>得到10,然后再计算<code>10*10=100</code>,如果我们要计算9<em>10的后继，需要写成`succ (9</em>10)`的形式。</p>
-<ul>
-<li><strong>div</strong>。div函数计算一个整数除以另外一个整数的结果，比如:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; div <span class="number">10</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="type">Prelude</span>&gt; div <span class="number">10</span> <span class="number">5</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>需要注意的是，div函数接收的两个参数必须是整数，第一个是被除数，第二个是除数，如果除不尽则返回商，舍弃余数。传入数字不能是浮点数，比如下面的形式会报错:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; div <span class="number">1.2</span> <span class="number">3</span></span><br><span class="line">&lt;interactive&gt;:<span class="number">31</span>:<span class="number">1</span>:</span><br><span class="line">    <span class="type">No</span> <span class="keyword">instance</span> for (<span class="type">Fractional</span> a0) arising from a use <span class="keyword">of</span> ‘it’</span><br><span class="line">    <span class="type">The</span> <span class="class"><span class="keyword">type</span> variable ‘a0’ is ambiguous</span></span><br><span class="line">    <span class="type">Note</span>: there are several potential instances:</span><br><span class="line"><span class="class">      <span class="keyword">instance</span> <span class="type">Integral</span> a =&gt; <span class="type">Fractional</span> (<span class="type">GHC</span>.<span class="type">Real</span>.<span class="type">Ratio</span> <span class="title">a</span>)</span></span><br><span class="line"><span class="class">        <span class="comment">-- Defined in ‘GHC.Real’</span></span></span><br><span class="line"><span class="class">      <span class="keyword">instance</span> <span class="type">Fractional</span> <span class="type">Double</span> <span class="comment">-- Defined in ‘GHC.Float’</span></span></span><br><span class="line"><span class="class">      <span class="keyword">instance</span> <span class="type">Fractional</span> <span class="type">Float</span> <span class="comment">-- Defined in ‘GHC.Float’</span></span></span><br><span class="line"><span class="class">    <span class="type">In</span> the first argument of ‘print’, namely ‘it’</span></span><br><span class="line"><span class="class">    <span class="type">In</span> a stmt of an interactive <span class="type">GHCi</span> command: print it</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="3-2-2-构建自己的函数"><a href="#3-2-2-构建自己的函数" class="headerlink" title="3.2.2 构建自己的函数"></a>3.2.2 构建自己的函数</h4><ul>
-<li>doubleMe。doubleMe函数的定义如下:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">doubleMe</span> x = x + x <span class="comment">-- 将数字变为两倍</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这个函数非常简单，就是返回一个数字的两倍。注意上面函数的定义方式:首先是函数名字，然后是空格分隔的参数，接着是等于号，等于号后面的是函数的实现。要运行这个函数，需要把它写在一个文件里，比如add.hs,然后输入ghci进入命令行模式，输入<code>:l add.hs</code>就可以加载函数了。下面是它的调用计算结果:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Prelude</span>&gt; :l add.hs </span><br><span class="line">[<span class="number">1</span> <span class="keyword">of</span> <span class="number">1</span>] <span class="type">Compiling</span> <span class="type">Main</span>             ( add.hs, interpreted )</span><br><span class="line"><span class="type">Ok</span>, modules loaded: <span class="type">Main</span>.</span><br><span class="line">*<span class="type">Main</span>&gt; doubleMe <span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">*<span class="type">Main</span>&gt; doubleMe <span class="number">3</span></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><strong>doubleUs</strong>。该函数接收x,y两个参数，然后返回这两个参数之和的两倍。定义如下:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">doubleUs</span> x y = x*<span class="number">2</span> + y*<span class="number">2</span> <span class="comment">-- 两个数字变为两倍然后相加</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>调用计算结果为:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*<span class="type">Main</span>&gt; doubleUs <span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line">*<span class="type">Main</span>&gt; doubleUs <span class="number">0</span> <span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><strong>useDoubleMe</strong>。该函数功能和<code>doubleUs</code>一样，只不过其调用了<code>doubleMe</code>两次，代码如下:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">useDoubleMe</span> x y = doubleMe x + doubleMe y <span class="comment">-- 调用简单函数</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>对了，忘了说了,haskell中注释是<code>--</code>。</p>
-<ul>
-<li><strong>doubleSmallNumber</strong>。该函数使用<code>if else</code>语句实现的功能是:如果x小于100则返回x;否则返回x的两倍。代码如下:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">doubleSmallNumber</span> x = <span class="keyword">if</span> x &lt; <span class="number">100</span> <span class="keyword">then</span> x <span class="keyword">else</span> <span class="number">2</span>*x <span class="comment">--如果x小于100返回x,否则返回2*x</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>调用结果为:<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*<span class="type">Main</span>&gt; doubleSmallNumber <span class="number">20</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line">*<span class="type">Main</span>&gt; doubleSmallNumber <span class="number">200</span></span><br><span class="line"><span class="number">400</span></span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是Haskell中if和else一定是一起出现的，else不可以省略，而且本质上if和else都是需要返回一个值。Haskell中所有的函数和表达式都需要返回一个结果，if语句就是一个表达式，所以它一定会返回一个结果。</p>
-<ul>
-<li><strong>doubleSmallNumber’</strong>。doubleSmallNumber’函数(注意函数最后有一个<code>&#39;</code>)返回的结果是doubleSmallNumber返回值加1,定义为:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">doubleSmallNumber'</span> x = (<span class="keyword">if</span> x &lt; <span class="number">100</span> <span class="keyword">then</span> x <span class="keyword">else</span> <span class="number">2</span>*x) + <span class="number">1</span> <span class="comment">-- doubleSmallNumber返回值加1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>我们通常在Haskell中在函数名字最后加一个<code>&#39;</code>来表示对某个函数稍微修改之后得到的新函数。上面的函数如果把括号去掉，那么只会在<code>x&gt;=100</code>的时候加1了。另外需要注意的是，Haskell的函数名字开头不能是大写字母。</p>
-<ul>
-<li><strong>conanO’Brien</strong>。conanO’Brien是一个没有参数的函数，这样的函数也被称为”定义”或者”名字”。conanO’Brien定义如下:<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">conanO'Brien</span> = <span class="string">"It's a-me, Conan O'Brien!"</span> <span class="comment">-- 没有参数的函数</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>上面的conanO’Brien函数定义好了之后，<code>conanO&#39;Brien</code>就与字符串<code>&quot;It&#39;s a-me, Conan O&#39;Brien!&quot;</code>等价了，而且字符串的值是不可以修改的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">haskell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/27/haskell简明入门-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1679,6 +1614,18 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">DeepFM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">FM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
@@ -1711,10 +1658,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -1724,6 +1667,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">haskell</a>
               </li>
              
               <li class="article-tag-list-item">
