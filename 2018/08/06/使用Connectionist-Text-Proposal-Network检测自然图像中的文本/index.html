@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
-  <title>Tag: FM | Lyrichu&#39;s Blog</title>
+  <title>使用Connectionist Text Proposal Network检测自然图像中的文本 | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="To be the best yourself!">
-<meta name="keywords" content="coding,math,machine learning">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lyrichu&#39;s Blog">
-<meta property="og:url" content="http://Lyrichu.github.io/tags/FM/index.html">
+  <meta name="description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
+<meta name="keywords" content="ocr,CTPN,图像文本检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Connectionist Text Proposal Network检测自然图像中的文本">
+<meta property="og:url" content="http://Lyrichu.github.io/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="To be the best yourself!">
+<meta property="og:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg">
+<meta property="og:updated_time" content="2018-08-06T14:33:05.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lyrichu&#39;s Blog">
-<meta name="twitter:description" content="To be the best yourself!">
+<meta name="twitter:title" content="使用Connectionist Text Proposal Network检测自然图像中的文本">
+<meta name="twitter:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
+<meta name="twitter:image" content="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
   
@@ -152,68 +155,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-使用Connectionist-Text-Proposal-Network检测自然图像中的文本" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/25/DeepFM-论文翻译/" class="archive-article-date">
-  	<time datetime="2018-06-25T09:55:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/DeepFM-论文翻译/">DeepFM(论文翻译)</a>
+    <h1 class="article-title" itemprop="name">
+      使用Connectionist Text Proposal Network检测自然图像中的文本
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/" class="archive-article-date">
+  	<time datetime="2018-08-06T13:26:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h1><center>摘要</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN连接,其无缝地融入卷积网络，这样就得到了一个端对端的可训练模型．这使得CTPN可以探索图像的丰富的上下文信息，这使得它在检测图像中的模糊文本方面变得非常强大.CTPN无需后续地处理便可以可靠地在多尺度以及多语言文本上工作，这有别于之前的自底向上的检测方法，那种方法需要多步过滤．CTPN在2013以及2015的ICDAR基准测试上分别取得了0.88和0.61的F-meature值，这远远超过了最近的其他方法[8,35]．CTPN使用非常深的VGG16模型[27]，计算非常高效，达到了每张图片0.14s的速度.在线的demo可以查看!(<a href="http://textdet.com/)[http://textdet.com/]" target="_blank" rel="noopener">http://textdet.com/)[http://textdet.com/]</a>.<br>&nbsp;&nbsp;&nbsp;&nbsp;关键字:Scene text detection,convolutional network,recurrent neural network,anchor machanism<p></p>
+<p></p><h2>1.Introduction</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;识别自然图像中的文字最近在计算机视觉中引起了人们极大的兴趣[8,14,15,10,35,11,9,1,28,32]．这是由于其有着巨大的实际应用前景，比如OCR,多语言翻译以及图像检索等．它包含了两个子任务:文本检测和识别．本文的工作聚焦在检测任务上[14,1,28,32]．相比于识别在分割较好的图像中的文字[15,9]，检测任务更具有挑战性．文本特征的巨大差异以及高度混乱的背景构成了本文准确定位的主要挑战．<p></p>
+<center><img src="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg"></center><br><center>CTPN架构图</center>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢您的支持，我会努力创作更好的文章!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">DeepFM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ocr</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">FM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CTPN</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTR</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">图像文本检测</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Lyrichu.github.io/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/25/DeepFM-论文翻译/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DeepFM(论文翻译)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="使用Connectionist-Text-Proposal-Network检测自然图像中的文本" data-title="使用Connectionist Text Proposal Network检测自然图像中的文本" data-url="http://Lyrichu.github.io/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://Lyrichu.github.io/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/", 
+    sourceId: "使用Connectionist-Text-Proposal-Network检测自然图像中的文本",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="使用Connectionist-Text-Proposal-Network检测自然图像中的文本" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -236,9 +388,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
