@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://Lyrichu.github.io">
   <title>使用Connectionist Text Proposal Network检测自然图像中的文本 | Lyrichu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
+  <meta name="description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本候选框网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本候选框中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度候选框的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的候选框自然地">
 <meta name="keywords" content="ocr,CTPN,图像文本检测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Connectionist Text Proposal Network检测自然图像中的文本">
 <meta property="og:url" content="http://Lyrichu.github.io/2018/08/06/使用Connectionist-Text-Proposal-Network检测自然图像中的文本/index.html">
 <meta property="og:site_name" content="Lyrichu&#39;s Blog">
-<meta property="og:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
+<meta property="og:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本候选框网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本候选框中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度候选框的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的候选框自然地">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg">
-<meta property="og:updated_time" content="2018-08-06T14:33:05.766Z">
+<meta property="og:updated_time" content="2018-08-06T15:26:14.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Connectionist Text Proposal Network检测自然图像中的文本">
-<meta name="twitter:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN">
+<meta name="twitter:description" content="摘要&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;我们提出了一个先进的连接文本候选框网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本候选框中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度候选框的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的候选框自然地">
 <meta name="twitter:image" content="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lyrichu&#39;s Blog" type="application/atom+xml">
@@ -175,9 +175,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h1><center>摘要</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;我们提出了一个先进的连接文本提议网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本提案中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度提案的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的提案自然地由RNN连接,其无缝地融入卷积网络，这样就得到了一个端对端的可训练模型．这使得CTPN可以探索图像的丰富的上下文信息，这使得它在检测图像中的模糊文本方面变得非常强大.CTPN无需后续地处理便可以可靠地在多尺度以及多语言文本上工作，这有别于之前的自底向上的检测方法，那种方法需要多步过滤．CTPN在2013以及2015的ICDAR基准测试上分别取得了0.88和0.61的F-meature值，这远远超过了最近的其他方法[8,35]．CTPN使用非常深的VGG16模型[27]，计算非常高效，达到了每张图片0.14s的速度.在线的demo可以查看!(<a href="http://textdet.com/)[http://textdet.com/]" target="_blank" rel="noopener">http://textdet.com/)[http://textdet.com/]</a>.<br>&nbsp;&nbsp;&nbsp;&nbsp;关键字:Scene text detection,convolutional network,recurrent neural network,anchor machanism<p></p>
+        <p></p><h1><center>摘要</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;我们提出了一个先进的连接文本候选框网络(Connectionist Text Proposal Network,CTPN)可以准确分割出自然图像中的文字．CTPN在直接基于卷积特征映射的一系列精细文本候选框中检测文本行．我们发明了一种垂直锚定机制，其共同预测每个固定宽度候选框的位置以及文本/非文本得分，大大提高了定位的准确度．序列化的候选框自然地由RNN连接,其无缝地融入卷积网络，这样就得到了一个端对端的可训练模型．这使得CTPN可以探索图像的丰富的上下文信息，这使得它在检测图像中的模糊文本方面变得非常强大.CTPN无需后续地处理便可以可靠地在多尺度以及多语言文本上工作，这有别于之前的自底向上的检测方法，那种方法需要多步过滤．CTPN在2013以及2015的ICDAR基准测试上分别取得了0.88和0.61的F-meature值，这远远超过了最近的其他方法[8,35]．CTPN使用非常深的VGG16模型[27]，计算非常高效，达到了每张图片0.14s的速度.在线的demo可以查看<a href="http://textdet.com/" target="_blank" rel="noopener">http://textdet.com/</a>.<br>&nbsp;&nbsp;&nbsp;&nbsp;关键字:Scene text detection,convolutional network,recurrent neural network,anchor machanism<p></p>
 <p></p><h2>1.Introduction</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;识别自然图像中的文字最近在计算机视觉中引起了人们极大的兴趣[8,14,15,10,35,11,9,1,28,32]．这是由于其有着巨大的实际应用前景，比如OCR,多语言翻译以及图像检索等．它包含了两个子任务:文本检测和识别．本文的工作聚焦在检测任务上[14,1,28,32]．相比于识别在分割较好的图像中的文字[15,9]，检测任务更具有挑战性．文本特征的巨大差异以及高度混乱的背景构成了本文准确定位的主要挑战．<p></p>
-<center><img src="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg"></center><br><center>CTPN架构图</center>
+<p><center><img src="http://t1.aixinxi.net/o_1ck7q4a0n9ia412viq23vka.png-w.jpg"></center></p>
+<p><center>CTPN架构图</center></p>
+<h4 id="a-我们在VGG16-model的最后一个卷积映射-conv5-上使用3x3的空间窗口密集滑动．每一行的序列窗口使用双向LSTM-BLSTM-递归连接．每一个窗口的卷积特征-3x3xC-作为256维BLSTM的输入-包括两个128维的LSTM-RNN-layer再连接到一个512维的全连接层，紧接着是输出层，输出层连接着预测文本-非文本的得分，y坐标轴以及k个锚的侧面细化偏移．-b-CTPN输出了序列化的固定宽度的精细化的文本候选框-每一个方框的颜色表明了文本-非文本的得分．只有得分为正的方框才会被显示出来．"><a href="#a-我们在VGG16-model的最后一个卷积映射-conv5-上使用3x3的空间窗口密集滑动．每一行的序列窗口使用双向LSTM-BLSTM-递归连接．每一个窗口的卷积特征-3x3xC-作为256维BLSTM的输入-包括两个128维的LSTM-RNN-layer再连接到一个512维的全连接层，紧接着是输出层，输出层连接着预测文本-非文本的得分，y坐标轴以及k个锚的侧面细化偏移．-b-CTPN输出了序列化的固定宽度的精细化的文本候选框-每一个方框的颜色表明了文本-非文本的得分．只有得分为正的方框才会被显示出来．" class="headerlink" title="(a)我们在VGG16 model的最后一个卷积映射(conv5)上使用3x3的空间窗口密集滑动．每一行的序列窗口使用双向LSTM(BLSTM)递归连接．每一个窗口的卷积特征(3x3xC)作为256维BLSTM的输入(包括两个128维的LSTM).RNN layer再连接到一个512维的全连接层，紧接着是输出层，输出层连接着预测文本/非文本的得分，ｙ坐标轴以及k个锚的侧面细化偏移．(b)CTPN输出了序列化的固定宽度的精细化的文本候选框,每一个方框的颜色表明了文本/非文本的得分．只有得分为正的方框才会被显示出来．"></a>(a)我们在VGG16 model的最后一个卷积映射(conv5)上使用3x3的空间窗口密集滑动．每一行的序列窗口使用双向LSTM(BLSTM)递归连接．每一个窗口的卷积特征(3x3xC)作为256维BLSTM的输入(包括两个128维的LSTM).RNN layer再连接到一个512维的全连接层，紧接着是输出层，输出层连接着预测文本/非文本的得分，ｙ坐标轴以及k个锚的侧面细化偏移．(b)CTPN输出了序列化的固定宽度的精细化的文本候选框,每一个方框的颜色表明了文本/非文本的得分．只有得分为正的方框才会被显示出来．</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;最近的文本检测方法大多采用自底向上的流程．[28,1,14,32,33]它们一般从低层次字符或者笔划开始检测，通常后面跟着许多后续步骤:非文本部分的过滤，文本行构造以及文本行验证．这些多步骤的自底向上的方法通常非常复杂，并且鲁棒性，可靠性较低．这些方法的性能非常依赖于字符检测的结果，以及已经提出的组成连接方法或者滑窗方法．这些方法通常探索低层次特征(比如基于SWT[3,13],MSER [14,33,23], or HoG [28])以从背景中区分出候选文本．然而由于其单独识别每个字符或者笔划，没有利用上下文信息，因此鲁棒性较低．举个例子，对于人来说识别序列字符要比识别单个字符更有自信，特别是当一个字符非常模糊的时候．这些限制经常会导致字符检测中巨大的非文本成分，这是导致后续步骤处理困难的主要原因．更进一步，这些错误的检测很容易在自底向上的处理步骤中累计，正如[28]指出的那样．为了解决这些问题，我们使用了强大的深层特征直接在卷积maps中进行文本信息的检测.我们提出了文本锚机制可以精细准确地预测文本的位置．然后，我们提出了一个in-netword recurrent 架构来连接这些精细化的文本候选框表达为序列化的形式，允许其编码成丰富的上下文信息．<br>&nbsp;&nbsp;&nbsp;&nbsp;CNN最近极大地推动了一般物体检测的发展．[25,5,6]最近最先进的方法是Faster-Region-CNN(Faster RCNN)[25],</p>
+
       
 
       
@@ -511,18 +514,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ocr</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CTPN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">图像文本检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LatexTools</a>
               </li>
              
@@ -532,6 +523,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">参考文献</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ocr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CTPN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">图像文本检测</a>
               </li>
              
               <li class="article-tag-list-item">
